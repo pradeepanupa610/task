@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fintech Wallet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Fintech Wallet Management</h1>
+  </header>
+
+  <div class="container">
+    <div class="form-container">
+      <h2>Add User</h2>
+      <form id="userForm">
+        <input type="text" id="name" placeholder="Name" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="phone" placeholder="Phone Number" required>
+        <input type="number" id="walletBalance" placeholder="Wallet Balance" required>
+        <button type="submit">Add User</button>
+      </form>
+    </div>
+
+    <div id="transactionModal" class="form-container" style="display:none;">
+      <h2>Add Transaction</h2>
+      <form id="transactionForm">
+        <select id="transactionType" required>
+          <option value="credit">Credit</option>
+          <option value="debit">Debit</option>
+        </select>
+        <input type="number" id="amount" placeholder="Amount" required>
+        <button type="submit">Add Transaction</button>
+      </form>
+      <button id="closeTransactionModal">Close</button>
+    </div>
+    
+
+    <div class="user-list">
+      <h2>Users</h2>
+      <table id="userTable">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th>Wallet Balance</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- Edit User Modal -->
+<div id="editUserModal" class="modal">
+  <div class="modal-content">
+    <span class="close" id="closeModal">&times;</span>
+    <h2>Edit User</h2>
+    <form id="editUserForm">
+      <input type="text" id="editName" placeholder="Name" required>
+      <input type="email" id="editEmail" placeholder="Email" required>
+      <input type="text" id="editPhone" placeholder="Phone Number" required>
+      <input type="number" id="editWalletBalance" placeholder="Wallet Balance" required>
+      <button type="submit">Update User</button>
+    </form>
+  </div>
+</div>
+
+    <div class="transaction-list">
+      <h2>Transaction History</h2>
+      <table id="transactionTable">
+        <thead>
+          <tr>
+            <th>User ID</th>
+            <th>Transaction Type</th>
+            <th>Amount</th>
+            <th>Timestamp</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
